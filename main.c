@@ -81,21 +81,19 @@ main ()
 
   for (int idx = 0; idx < counter; idx++)
     {
+    
 
-      printf ("\nAuthor's Last Name: %s \nPublication Year: %u \nPublication "
-	      "City: %s\n", authorLname[idx], pubYear[idx], pubCity[idx]);
+      printf ("\nAuthor's Last Name: %s \nPublication Year: %u \nPublication City: %s\n", authorLname[idx], pubYear[idx], pubCity[idx]);
     }
   return 0;
 }
 
 // String Check
-int
-stringCheck (char str[ERROR_TRAP_BUFFER], size_t maxSize)
+int stringCheck (char str[ERROR_TRAP_BUFFER], size_t maxSize)
 {
-  int strReturnSize = (int) (strlen (str+1) - maxSize);
+  int strReturnSize = (int)(strlen (str) - maxSize);
 
-  (strReturnSize <= 0)
-    ? strReturnSize = 0
+  (strReturnSize <= 0) ? strReturnSize = 0
     : printf ("Input size is too big, you are %d over, please try again \n",
 	      strReturnSize);
 
@@ -103,17 +101,15 @@ stringCheck (char str[ERROR_TRAP_BUFFER], size_t maxSize)
 }
 
 // Author Last Name
-void
-getName (char str[ERROR_TRAP_BUFFER], int MAX_SIZE)
+void getName (char str[ERROR_TRAP_BUFFER], int MAX_SIZE)
 {
   do
     {
 
       printf ("What is the author's last name? \n");
-      scanf (" %[^\n]s", str);
+      scanf ("%[^\n]s", str);
 
-    }
-  while (stringCheck (str, MAX_SIZE) > 0);
+    }while (stringCheck (str, MAX_SIZE) > 0);
 
 }
 
@@ -134,8 +130,7 @@ getYear (unsigned int *val)
 	  isGood = true;
 	}
 
-    }
-  while (isGood);
+    }while (isGood);
 }
 
 // Pub City
@@ -147,9 +142,8 @@ getCity (char str[ERROR_TRAP_BUFFER], int MAX_SIZE)
     {
 
       printf ("What is the publication city?\n");
-      scanf (" %[^\n]s", str);
+      scanf ("%[^\n]s", str);
 
-    }
-  while (stringCheck (str, MAX_SIZE) > 0);
+    }while (stringCheck (str, MAX_SIZE) > 0);
 
 }
