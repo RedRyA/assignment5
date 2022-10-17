@@ -2,6 +2,7 @@
 /* Ryan Reddoch
    CS-1714-B1
    Exercise 6 */
+   // test
 
 // HEADERS //
 #include <ctype.h>
@@ -107,7 +108,7 @@ void getName (char str[ERROR_TRAP_BUFFER], int MAX_SIZE)
     {
 
       printf ("What is the author's last name? \n");
-      scanf ("%[^\n]s", str);
+      scanf (" %[^\n]s", str);
 
     }while (stringCheck (str, MAX_SIZE) > 0);
 
